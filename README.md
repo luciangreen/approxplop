@@ -6,7 +6,7 @@ where plop2 can't find an exact formula for an output character, fit a small lea
 
 ```prolog
 ?- use_module(prolog/approxplop).
-?- fit([[1,2]-[2,5], [3,4]-[4,1]], M).      % M = [exact(shift(0,1)), approx(table(...))]
+?- fit([[1,2]-[2,5], [3,4]-[4,1]], M).      % M = [exact(in(1)), approx(table(...))]: in(1) and shift(0,1) both fit; copies are tried before shifts
 ?- predict(M, [1,2], Out).                  % Out = [2,5]
 ?- coverage(M, C).                          % C = 1/2: one of two characters is exact
 ```

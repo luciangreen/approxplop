@@ -2,7 +2,7 @@
 % learned model for that one character (here a 1-nearest-neighbour table over the examples),
 % and mark it, so RENN can later recover readable code from it. Exact characters stay exact.
 % Strings are lists of numbers 0..9; examples are Input-Output pairs of equal length.
-%?- fit([[1,2]-[2,5], [3,4]-[4,1]], M).      % M = [exact(shift(0,1)), approx(table(...))]
+%?- fit([[1,2]-[2,5], [3,4]-[4,1]], M).      % M = [exact(in(1)), approx(table(...))]: in(1) and shift(0,1) both fit; copies are tried before shifts
 %?- predict(M, [1,2], Out).                  % Out = [2,5]
 %?- coverage(M, C).                          % C = 1/2: one of two characters is exact
 :- module(approxplop, [formula/3, exact_for/3, fit/2, predict/3, coverage/2, distance/3]).
